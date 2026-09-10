@@ -6,189 +6,256 @@
 <title>For Ona 🌷</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html, body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-
-body {
-    background: linear-gradient(135deg, #ffd9e8, #dcecff);
-    color: #333;
-}
-
-.screen {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 25px;
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(1.03);
-    transition: opacity 0.6s ease, transform 0.6s ease, visibility 0.6s;
-}
-
-.screen.active {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-}
-
-.card {
-    width: min(92vw, 500px);
-    max-height: 90vh;
-    overflow-y: auto;
-    background: rgba(255,255,255,0.88);
-    backdrop-filter: blur(15px);
-    border-radius: 30px;
-    padding: 35px 25px;
-    text-align: center;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.12);
-}
-
-h1 {
-    font-size: clamp(30px, 8vw, 48px);
-    margin-bottom: 15px;
-}
-
-h2 {
-    font-size: clamp(25px, 7vw, 38px);
-    margin-bottom: 15px;
-}
-
-p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin: 10px 0;
-}
-
-.small {
-    font-size: 15px;
-    opacity: 0.7;
-}
-
-.emoji {
-    font-size: 55px;
-    margin-bottom: 10px;
-}
-
-.photo {
-    width: min(75vw, 300px);
-    height: min(75vw, 300px);
-    object-fit: cover;
-    border-radius: 25px;
-    margin: 15px auto;
-    display: block;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
-.photo-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin: 15px 0;
-}
-
-.photo-grid .photo {
-    width: 100%;
-    height: 190px;
-    margin: 0;
-}
-
-button {
-    border: none;
-    padding: 15px 25px;
-    border-radius: 50px;
-    font-size: 17px;
-    font-weight: 700;
-    cursor: pointer;
-    margin: 8px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-
-.next {
-    background: #333;
-    color: white;
-    box-shadow: 0 7px 20px rgba(0,0,0,0.15);
-}
-
-.yes-pink {
-    background: #ffb6d2;
-    color: #63243d;
-}
-
-.yes-blue {
-    background: #b9d8ff;
-    color: #24476b;
-}
-
-.goat {
-    display: inline-block;
-    background: #fff0a8;
-    padding: 8px 15px;
-    border-radius: 30px;
-    font-weight: 800;
-    margin-bottom: 10px;
-}
-
-.date {
-    font-size: 30px;
-    font-weight: 800;
-    margin-top: 15px;
-    color: #d95d8a;
-}
-
-.heart {
-    position: fixed;
-    font-size: 25px;
-    animation: floatUp 4s linear forwards;
-    pointer-events: none;
-}
-
-@keyframes floatUp {
-    from {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
-    to {
-        transform: translateY(-100vh) rotate(360deg);
-        opacity: 0;
-    }
-}
 
-@media (max-height: 700px) {
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        min-height: 100vh;
+        overflow: hidden;
+        background: linear-gradient(135deg, #ffd6e7, #d9efff);
+        color: #333;
+    }
+
+    .screen {
+        display: none;
+        width: 100%;
+        height: 100vh;
+        min-height: 100vh;
+        padding: 25px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        animation: fadeIn 0.5s ease;
+    }
+
+    .screen.active {
+        display: flex;
+    }
+
     .card {
-        padding: 22px 20px;
+        width: 100%;
+        max-width: 600px;
+        max-height: 90vh;
+        overflow-y: auto;
+        background: rgba(255,255,255,0.78);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 30px;
+        padding: 35px 25px;
+        box-shadow: 0 15px 45px rgba(0,0,0,0.12);
     }
 
-    .photo {
-        width: 220px;
-        height: 220px;
+    h1 {
+        font-size: clamp(2rem, 8vw, 3.2rem);
+        margin-bottom: 15px;
+        color: #222;
     }
 
-    .photo-grid .photo {
-        height: 140px;
+    h2 {
+        font-size: clamp(1.7rem, 7vw, 2.5rem);
+        margin-bottom: 15px;
+        color: #222;
     }
 
     p {
-        font-size: 16px;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
     }
-}
+
+    .date {
+        font-weight: 700;
+        color: #777;
+        font-size: 1.1rem;
+        margin-top: -5px;
+        margin-bottom: 20px;
+    }
+
+    .small {
+        font-size: 0.95rem;
+        color: #666;
+    }
+
+    .emoji {
+        font-size: 4rem;
+        margin-bottom: 15px;
+    }
+
+    button {
+        border: none;
+        border-radius: 50px;
+        padding: 15px 25px;
+        margin: 8px;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+    }
+
+    button:active {
+        transform: scale(0.96);
+    }
+
+    .pink-btn {
+        background: #f8a9c4;
+        color: #fff;
+        box-shadow: 0 8px 20px rgba(248,169,196,0.4);
+    }
+
+    .blue-btn {
+        background: #9fd8f5;
+        color: #fff;
+        box-shadow: 0 8px 20px rgba(159,216,245,0.4);
+    }
+
+    .photo {
+        width: 100%;
+        max-width: 280px;
+        max-height: 360px;
+        object-fit: cover;
+        border-radius: 25px;
+        margin: 15px auto 20px;
+        display: block;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .photo-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin: 20px 0;
+    }
+
+    .photo-grid img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 22px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .goat-list {
+        text-align: left;
+        margin: 20px auto;
+        max-width: 400px;
+    }
+
+    .goat-list p {
+        background: rgba(255,255,255,0.65);
+        padding: 12px 16px;
+        border-radius: 15px;
+        margin-bottom: 10px;
+    }
+
+    .yes-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .yes-buttons button {
+        width: min(90%, 350px);
+        font-size: 1.05rem;
+        padding: 17px 20px;
+    }
+
+    .celebration h1 {
+        color: #e75d8b;
+    }
+
+    .goated {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin: 20px 0;
+    }
+
+    .floating {
+        position: fixed;
+        pointer-events: none;
+        animation: floatUp 5s linear infinite;
+        opacity: 0.8;
+        font-size: 1.8rem;
+    }
+
+    .floating:nth-child(1) {
+        left: 10%;
+        bottom: -50px;
+        animation-delay: 0s;
+    }
+
+    .floating:nth-child(2) {
+        left: 30%;
+        bottom: -50px;
+        animation-delay: 1s;
+    }
+
+    .floating:nth-child(3) {
+        left: 55%;
+        bottom: -50px;
+        animation-delay: 2s;
+    }
+
+    .floating:nth-child(4) {
+        left: 80%;
+        bottom: -50px;
+        animation-delay: 3s;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes floatUp {
+        from {
+            transform: translateY(0) rotate(0deg);
+            opacity: 0;
+        }
+
+        20% {
+            opacity: 0.8;
+        }
+
+        to {
+            transform: translateY(-110vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .screen {
+            padding: 15px;
+        }
+
+        .card {
+            padding: 28px 18px;
+            border-radius: 25px;
+        }
+
+        .photo-grid img {
+            height: 190px;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
 </style>
 </head>
 
@@ -198,113 +265,191 @@ button:hover {
 <section class="screen active" id="screen1">
     <div class="card">
         <div class="emoji">🌷</div>
+
         <h1>For Ona</h1>
-        <p>A little something from Baps.</p>
-        <p class="small">
-            I could've just asked you normally...<br>
+
+        <p>
+            A little something from Baps 🩷
+        </p>
+
+        <p>
+            I could've just asked you normally...
+            <br>
             But where's the fun in that? 😭
         </p>
-        <button class="next" onclick="nextScreen(2)">Okay, continue 👀</button>
+
+        <button class="pink-btn" onclick="nextScreen()">
+            Tap to continue 🩷
+        </button>
     </div>
 </section>
+
 
 <!-- SCREEN 2 -->
 <section class="screen" id="screen2">
     <div class="card">
-        <h2>How it started 🩷</h2>
+
+        <h2>How it started...</h2>
+
         <p>
-            We met through a friend...
+            We met through a friend.
         </p>
+
         <p>
-            Somehow, one month later, Baps is making an entire website
-            instead of just asking one simple question. 😭
+            Somehow, one month later,
+            I'm sitting here making an entire website
+            just for you. 😭
         </p>
-        <button class="next" onclick="nextScreen(3)">Keep going →</button>
+
+        <p>
+            We've laughed.
+            <br>
+            We've ragebaited each other.
+            <br>
+            We've had way too many moments.
+        </p>
+
+        <p>
+            And somewhere along the way...
+            <br>
+            you became my GOAT. 🐐
+        </p>
+
+        <button class="blue-btn" onclick="nextScreen()">
+            Continue 🩵
+        </button>
+
     </div>
 </section>
+
 
 <!-- SCREEN 3 -->
 <section class="screen" id="screen3">
     <div class="card">
-        <div class="goat">🐐 MY GOAT</div>
+
+        <h2>My GOAT 🐐</h2>
 
         <img
-            class="photo"
             src="ec5a0131-9d24-4e3d-b962-3fc2d678b87f.jpeg"
-            alt="Ona">
-
-        <h2>Ona 🌷</h2>
+            class="photo"
+            alt="Ona"
+        >
 
         <p>
-            Funny.<br>
-            Naturally herself.<br>
-            And ridiculously gorgeous.
+            You're actually so funny.
         </p>
 
         <p>
-            Like genuinely... how are you real? 😭
+            You're ridiculously gorgeous.
         </p>
 
-        <button class="next" onclick="nextScreen(4)">Next →</button>
+        <p>
+            And I love how you're just naturally yourself.
+        </p>
+
+        <p>
+            No pretending.
+            <br>
+            No trying too hard.
+            <br>
+            Just you.
+        </p>
+
+        <p>
+            <strong>My GOAT. 🐐🩷</strong>
+        </p>
+
+        <button class="pink-btn" onclick="nextScreen()">
+            Next 🩷
+        </button>
+
     </div>
 </section>
+
 
 <!-- SCREEN 4 -->
 <section class="screen" id="screen4">
     <div class="card">
-        <h2>And then there's me... 😭</h2>
+
+        <h2>And then there's me... 😂</h2>
 
         <img
+            src="A6FAEAAF-8F0F-4581-9D2F-64DE4A6C671F.jpeg"
             class="photo"
-            src="IMG_2238.jpeg"
-            alt="Baps">
+            alt="Baps"
+        >
 
-        <p>
-            Obviously I'm also a GOAT.
-        </p>
+        <div class="goat-list">
 
-        <div class="goat">🐐 BAPS</div>
+            <p>🐐 Professional GOAT</p>
 
-        <p class="small">
-            I don't make the rules.
-        </p>
+            <p>😂 Occasionally funny</p>
 
-        <button class="next" onclick="nextScreen(5)">Continue →</button>
+            <p>😌 Definitely not obsessed with Ona</p>
+
+            <p>🧠 Will definitely win every argument</p>
+
+            <p>🤨 Probably.</p>
+
+        </div>
+
+        <button class="blue-btn" onclick="nextScreen()">
+            Keep going 🩵
+        </button>
+
     </div>
 </section>
+
 
 <!-- SCREEN 5 -->
 <section class="screen" id="screen5">
     <div class="card">
+
         <h2>Two GOATs.</h2>
-        <h2>One potentially GOATED relationship. 🐐</h2>
+
+        <p class="goated">
+            One potentially GOATED relationship. 🐐
+        </p>
 
         <div class="photo-grid">
-            <img
-                class="photo"
-                src="A6FAEAAF-8F0F-4581-9D2F-64DE4A6C671F.jpeg"
-                alt="Ona">
 
             <img
-                class="photo"
+                src="ec5a0131-9d24-4e3d-b962-3fc2d678b87f.jpeg"
+                alt="Ona"
+            >
+
+            <img
                 src="IMG_7200.jpeg"
-                alt="Baps">
+                alt="Baps"
+            >
+
         </div>
 
         <p>
-            Honestly, the statistics are looking pretty good. 📈
+            Honestly...
+            <br>
+            we'd make a pretty GOATED team.
         </p>
 
-        <button class="next" onclick="nextScreen(6)">There's more →</button>
+        <button class="pink-btn" onclick="nextScreen()">
+            There's more 🩷
+        </button>
+
     </div>
 </section>
+
 
 <!-- SCREEN 6 -->
 <section class="screen" id="screen6">
     <div class="card">
-        <div class="emoji">🥹</div>
 
         <h2>One last thing...</h2>
+
+        <img
+            src="IMG_2238.jpeg"
+            class="photo"
+            alt="Ona"
+        >
 
         <p>
             I genuinely don't think I've told you enough
@@ -312,170 +457,202 @@ button:hover {
         </p>
 
         <p>
-            Like actually.
+            Like actually...
+            <br>
+            how are you real? 😭
         </p>
 
         <p>
-            How are you real? 😭
+            And before you start getting a big head...
+            <br>
+            yes, I know I'm feeding your ego right now.
         </p>
 
-        <button class="next" onclick="nextScreen(7)">Okay, next →</button>
+        <p>
+            But I don't care. 🩷
+        </p>
+
+        <button class="blue-btn" onclick="nextScreen()">
+            One more thing... 🩵
+        </button>
+
     </div>
 </section>
+
 
 <!-- SCREEN 7 -->
 <section class="screen" id="screen7">
     <div class="card">
+
         <div class="emoji">📸</div>
 
         <h2>Our first date</h2>
 
         <p>
-            This part is waiting for our first date memories. 🩷
+            This part is waiting for us.
         </p>
 
-        <p class="small">
-            Maybe this section will have a couple of photos
-            and a little memory from the day...
+        <p>
+            After our first date,
+            this is where the memories,
+            pictures and little moments go.
         </p>
 
-        <div class="date">10/09/26</div>
+        <p>
+            One day we'll look back at this
+            and laugh at how it all started.
+        </p>
 
-        <button class="next" onclick="nextScreen(8)">Keep going →</button>
+        <button class="pink-btn" onclick="nextScreen()">
+            Almost there 🩷
+        </button>
+
     </div>
 </section>
+
 
 <!-- SCREEN 8 -->
 <section class="screen" id="screen8">
     <div class="card">
-        <h2>So far...</h2>
+
+        <div class="emoji">🐐</div>
+
+        <h2>So...</h2>
+
+        <p>
+            We've talked.
+        </p>
 
         <p>
             We've laughed.
         </p>
 
         <p>
-            We've ragebaited each other. 😭
+            We've ragebaited each other.
         </p>
 
         <p>
-            We've established that we're both GOATs.
+            I've officially established that you're my GOAT.
         </p>
 
         <p>
-            And honestly...
+            There's really only one thing left to ask.
         </p>
 
-        <p>
-            I really like what we've got going.
-        </p>
+        <button class="blue-btn" onclick="nextScreen()">
+            The question 🩵
+        </button>
 
-        <button class="next" onclick="nextScreen(9)">One final question →</button>
     </div>
 </section>
+
 
 <!-- SCREEN 9 -->
 <section class="screen" id="screen9">
     <div class="card">
+
         <div class="emoji">🌷</div>
 
-        <h2>Ona...</h2>
+        <h1>May I be your boyfriend? 🩷</h1>
 
-        <p>
-            I have one very important question.
+        <p class="date">
+            12/09/26
         </p>
 
-        <h1 style="font-size:clamp(30px,8vw,45px);">
-            May I be your boyfriend? 🩷
-        </h1>
+        <p>
+            I wanted to ask you properly.
+            <br>
+            In the most Baps way possible. 😂
+        </p>
 
-        <div>
-            <button class="yes-pink" onclick="yesAnswer()">
+        <div class="yes-buttons">
+
+            <button
+                class="pink-btn"
+                onclick="celebrate()">
                 YES, obviously 🩷
             </button>
 
-            <button class="yes-blue" onclick="yesAnswer()">
+            <button
+                class="blue-btn"
+                onclick="celebrate()">
                 YES, but I'll pretend I had a choice 🩵
             </button>
+
         </div>
+
     </div>
 </section>
+
 
 <!-- SCREEN 10 -->
-<section class="screen" id="screen10">
+<section class="screen celebration" id="screen10">
+
+    <div class="floating">🌷</div>
+    <div class="floating">🩷</div>
+    <div class="floating">🩵</div>
+    <div class="floating">🐐</div>
+
     <div class="card">
-        <div class="emoji">🥹🩷</div>
 
-        <h1>CORRECT ANSWER.</h1>
+        <div class="emoji">😭❤️</div>
 
-        <h2>Baps + Ona</h2>
+        <h1>
+            CORRECT ANSWER.
+        </h1>
 
-        <div class="goat">
+        <p class="goated">
+            Baps + Ona
+        </p>
+
+        <p class="goated">
             🐐 THE GOATED COUPLE 🐐
-        </div>
+        </p>
 
         <p>
-            Two GOATs.<br>
-            One team.<br>
-            And this is only the beginning.
+            Two GOATs.
+            <br>
+            One team.
+            <br>
+            And this is only the beginning. 🩷
         </p>
 
-        <div class="date">
-            10/09/26
+        <p>
+            12/09/26
+        </p>
+
+        <div class="emoji">
+            🌷🩷🩵🐐
         </div>
 
-        <p class="small">
-            🌷🩷🩵
-        </p>
     </div>
 </section>
+
 
 <script>
 
-function nextScreen(number) {
+let currentScreen = 1;
 
-    document.querySelectorAll(".screen").forEach(screen => {
-        screen.classList.remove("active");
-    });
+function nextScreen() {
 
-    document.getElementById("screen" + number).classList.add("active");
+    document.getElementById("screen" + currentScreen)
+        .classList.remove("active");
+
+    currentScreen++;
+
+    document.getElementById("screen" + currentScreen)
+        .classList.add("active");
 }
 
-function yesAnswer() {
+function celebrate() {
 
-    nextScreen(10);
+    document.getElementById("screen" + currentScreen)
+        .classList.remove("active");
 
-    createCelebration();
-}
+    currentScreen = 10;
 
-function createCelebration() {
-
-    const emojis = ["🩷", "🩵", "🌷", "💗", "✨", "🐐"];
-
-    for (let i = 0; i < 35; i++) {
-
-        const heart = document.createElement("div");
-
-        heart.className = "heart";
-
-        heart.innerText =
-            emojis[Math.floor(Math.random() * emojis.length)];
-
-        heart.style.left =
-            Math.random() * 100 + "vw";
-
-        heart.style.top =
-            80 + Math.random() * 20 + "vh";
-
-        heart.style.animationDuration =
-            3 + Math.random() * 3 + "s";
-
-        document.body.appendChild(heart);
-
-        setTimeout(() => {
-            heart.remove();
-        }, 6000);
-    }
+    document.getElementById("screen10")
+        .classList.add("active");
 }
 
 </script>
